@@ -1,4 +1,4 @@
-run_analysis <- function (dir = "C:/Users/Andrea/Documents/Jake/R/UCI HAR dataset/") {
+run_analysis <- function (dir) {
     library(data.table)
     library(plyr)
     library(dplyr)
