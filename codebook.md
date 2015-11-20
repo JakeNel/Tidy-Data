@@ -99,4 +99,4 @@ Using the cbind() function, the single column data frames 'subject,' 'group,' an
 Using the %>% pipe operator, group_by() and summarise_each() functions from the dplyr package, the Master data is grouped by 'subject' ID and averaged for each variable with the mean() function.  The  data is then ordered by subject with the arrange function (dplyr package) 
 
 ### Write .txt file
-The file is written with write.table() and writes the file in the current working directory.  
+The file is written with write.table() and writes the file in the current working directory.  See the README.md file for a description of the final data.  
