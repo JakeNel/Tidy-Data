@@ -1,4 +1,4 @@
-run_analysis <- function (dir) {
+run_analysis <- function (dir = getwd()) {
     library(data.table)
     library(plyr)
     library(dplyr)
