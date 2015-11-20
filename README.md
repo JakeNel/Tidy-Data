@@ -1,6 +1,8 @@
 # run_analysis() README
 
-run_analysis() is a function which can be broken down into three steps.  The steps are marked in comments in the R code.  The code requires the data.table, plyr, and dplyr packages, which are loaded as part of the function.  The function works off of the raw dataset created by downloading and extracting the data from this url on your computer:  
+run_analysis() writes a tidy dataset of mean and standard deviation estimators of Samsung gyroscope and accelerometer trial data from 30 subjects performing 6 different motion activities from 2 trial groups, labeled 'test' and 'train.'  
+
+The function can be broken down into three steps.  The steps are marked in comments in the R code.  The code requires the data.table, plyr, and dplyr packages, which are loaded as part of the function.  The function works off of the raw dataset created by downloading and extracting the data from this url on your computer:  
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
