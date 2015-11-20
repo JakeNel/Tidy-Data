@@ -47,7 +47,7 @@ The data frame 'Master' is created by combining the datasets X_test and X_train.
 ### Adding columns, Finished Master data
 Using the cbind() function, the single column data frames 'subject,' 'group,' and 'y' are combined to "Master" data.  The Master data is complete!
 
-## Create final data, and write txt file
+## Create Final Data, Write txt File
 
 ### Create "Tidy" data
 Using the %>% pipe operator, group_by() and summarise_each() functions from the dplyr package, the Master data is grouped by 'subject' ID and averaged for each variable with the mean() function.
