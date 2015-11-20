@@ -6,7 +6,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 Once extracted, the folders contain various text files that contain data by Samsung on triaxial accelerometers and gyroscope readings during different common daily motion actiivities.  The data is randomly separated into test and training groups for comparative research.  Important labeling and README data can be found at the top of the directory.  Test and training sub-datasets can be found in the folders "Test" and "train".  Each of these folders contains data in "inertial signals" which consists of the raw input data, while the test and train datasets contains its summary data.  The run_analysis() function only extracts specific summary data, and so the inertial signals will not be extracted or modified. 
 
 ### X_test and X_train
-These datasets contain several 'untidy' summary data for each subject over  561 variables (labels for which are found in 'features').  
+These datasets contain several 'untidy' summary data for each subject over  561 variables.  See 'features' for a description of the variables and their units.  
 
 2947 observations are in test, and 7352 observations are in train.  
 
@@ -19,8 +19,54 @@ These datasets contain the ID number for all the subjects in the test and train 
 ### activity_labels
 The key for coding categorical variables of y_test and y_train.  There are 6 activities labels from one to six:  Walking, Walking Upstairs, Walking Downstairs, Sitting, Standing, Laying
 
-### features
-The names of all 561 variables for the datasets X_test and X_train.  
+### features (variable description)
+The names of all 561 variables for the datasets X_test and X_train. 
+
+The variables measure the accelermeter and gyroscope 3 axial data over different subjects doing different activities (see 'activity_labels' and 'subjects').  Both the time domain variables (how the signal changes over time, denoted with the 't-' prefix), and frequency domain variables (how frequently the signal occurs within each frequency band).
+
+These are the variables (where XYZ refers to 3 sub-variables of each of the 3 axial data sets).
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+From which estimating variables are calculated
+
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
+
+Time domain variables are measured in changes to signal per unit of time, while frequency domain variables are measured in the frequency of a signal within a unit of time.  These variables are filtered for signal noise.  
+
+For more information, download the data and read the text file "features.info.txt"
 
 ## Reading Data
 Using the more efficient fread() function from the 'data.table' package, the text files are read in and are assigned variable values analogous to their file name.  Within the fread() function, the file location is created using file.path(), passing arguments 'dir' (from run_analysis), and the file location relative to the dataset folder.  
