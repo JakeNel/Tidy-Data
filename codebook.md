@@ -1,4 +1,4 @@
-## Raw data summary 
+## Raw Data Summary 
 The raw data can be downloaded at the following URL:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
@@ -33,13 +33,13 @@ The variable 'y' is created which combines the coded categorical data from both 
 ### Transposing features
 Features data is converted from 561 rows to 561 columns using the t() function, to prepare it for naming the columns of the Master dataset 
 
-### Combining Subject data
+### Combining subject data
 The data frame 'subject' is created which combines the subject_test and subject_train data, using the rbind() function.  The column name is assigned as "Subject"
 
 ### Creating "Group" column
 To identify which records are from the test and train groups, a data frame called 'group' is created with a single column is created repeating the strings "test" and "train" for the number of rows of each corresponding dataset.  The column name is assigned as "Group"
 
-## Assembling Master data
+## Assembling Master Data
 
 ### Creating data, naming and selecting columns
 The data frame 'Master' is created by combining the datasets X_test and X_train.  The features data is applied to the Master data as the column names.  The variable "keep" calculates which columns have and mean and standard deviation data.  It does so by using the grepl() function to index which column names contain the string patterns "mean()" and "std()" in the column names, and the select() function (dplyr package) is applied to keep the columns of Master according to the "keep" index.  
